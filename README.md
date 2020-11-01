@@ -18,7 +18,7 @@ _Java 8 thru 11 maven artifact:_
     <dependency>
         <groupId>com.zaxxer</groupId>
         <artifactId>HikariCP</artifactId>
-        <version>3.4.5</version>
+        <version>3.4.4</version>
     </dependency>
 ```
 _Java 7 maven artifact (*maintenance mode*):_
@@ -173,7 +173,7 @@ never be retired, only when it is closed will it then be removed.  On a connecti
 basis, minor negative attenuation is applied to avoid mass-extinction in the pool.  **We strongly recommend
 setting this value, and it should be several seconds shorter than any database or infrastructure imposed
 connection time limit.**  A value of 0 indicates no maximum lifetime (infinite lifetime), subject of
-course to the ``idleTimeout`` setting.  The minimum allowed value is 30000ms (30 seconds).
+course to the ``idleTimeout`` setting.
 *Default: 1800000 (30 minutes)*
 
 &#128288;``connectionTestQuery``<br/>

@@ -31,7 +31,7 @@ import java.util.function.Predicate;
 import java.util.function.UnaryOperator;
 
 /**
- * Fast list without range checking.
+ * FastList没有数组越界检查
  *
  * @author Brett Wooldridge
  */
@@ -67,7 +67,7 @@ public final class FastList<T> implements List<T>, RandomAccess, Serializable
    }
 
    /**
-    * Add an element to the tail of the FastList.
+    * 添加元素
     *
     * @param element the element to add
     */
@@ -118,15 +118,14 @@ public final class FastList<T> implements List<T>, RandomAccess, Serializable
    }
 
    /**
-    * This remove method is most efficient when the element being removed
-    * is the last element.  Equality is identity based, not equals() based.
-    * Only the first matching element is removed.
+    * 删除元素，从数组的最后一个元素开始遍历
     *
     * @param element the element to remove
     */
    @Override
    public boolean remove(Object element)
    {
+      // 从尾部开始遍历
       for (int index = size - 1; index >= 0; index--) {
          if (element == elementData[index]) {
             final int numMoved = size - index - 1;
